@@ -1,0 +1,12 @@
+---
+- hosts: web
+  become: yes
+  tasks:
+
+  - name: install utility in ubuntu
+    yum:  name="{{ item }}"   state=installed
+    loop: 
+     - git
+     - tree
+     - nano
+

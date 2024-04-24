@@ -1,0 +1,11 @@
+---
+- hosts: web
+  become: yes
+  vars:
+    pk_name: httpd
+  tasks:
+
+  - name: example of variables
+    yum: name=" {{ pk_name }} "  state=present
+
+  

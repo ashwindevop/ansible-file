@@ -1,0 +1,7 @@
+---
+- hosts: web
+  become: yes
+  tasks:
+  
+  - name: disable selinux
+    command: /usr/sbin/setenforce 0

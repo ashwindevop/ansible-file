@@ -1,0 +1,13 @@
+---
+- hosts: web
+  become: yes
+  tasks:
+
+  - name: this wil install on redhat
+    yum: name=tree  state=present
+    when: ansible_os_family == "RedHat"
+
+
+  - name: this wil install on Debian
+    yum: name=tree state=present
+    when: ansible_os_family == "Debian"

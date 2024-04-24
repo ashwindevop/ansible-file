@@ -1,0 +1,21 @@
+---
+- hosts: web
+  become: yes
+  tasks:
+
+  - name: installation of httpd server
+    yum: name=httpd state=present
+
+  - name: start the service
+    service:  name=httpd  state=started
+
+
+  - name: copt the template
+    template: src=/home/ansible/index.html  dest=/var/www/html
+    notify:
+    - hhh
+
+ 
+  handlers:
+  - name: hhh
+    service: name=httpd  state=restarted

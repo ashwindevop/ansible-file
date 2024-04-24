@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+
+  - name: find user
+    user:  name=ansible   state=present

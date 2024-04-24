@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+
+  - name: ping all machine
+    ping:
+
+
+  - name: install latest git
+    yum: name=git state=latest
